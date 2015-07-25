@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-lg-12">
+     <div class="panel panel-default plain toggle panelMove panelClose panelRefresh">
+       <div class="panel-heading">
+          <h4 class="panel-title">Add A Sensor</h4>
+       </div>
+       <div class="panel-body">
+          <form role="form" name="sensor" show-errors class="form-horizontal">
+              <div class="sub-main">
+                <div>
+                  <label><h4>Sensor Name</h4> </label>
+                      <div>
+                        <input  autofocus type="text" name="name" ng-model="name" class="form-control" required>
+                          <label><h4>Sensor Model</h4></label>
+                            <div>
+                              <input  autofocus type="text" name="model" ng-model="model"class="form-control"  required>
+                            </div>
+                          <label><h4>Sensor Pin</h4></label>
+                            <div>
+
+                                <select class="form-control"  ng-options="p.label  for p in pins" ng-model="pin_no"></select>
+
+                            </div>
+                          <label><h4>Sensor Type</h4></label>
+                            <div>
+                              <div class="btn-group">
+                                <label required class="btn btn-default btn-sm" ng-model="type" btn-radio="'analog'">Analog</label>
+                                <label required class="btn btn-default btn-sm" ng-model=" type" btn-radio="'digital'">Digital</label>
+                              </div>
+                            </div>
+                            <label><h4>Notes</h4></label>
+                                <div>
+                                  <textarea  autofocus type="text" name="note" class="form-control" ng-model="notes" ></textarea>
+                                </div>
+                            </form>
+                                <br /> 
+                            <div class="col-md-6 ">
+                                <button class="col-md-3 btn btn-warning btn-spaced btn-spaced" ng-click="cancel()">Cancel</button>
+                                <button ng-click="addSensor(sensor)" class=" col-md-3 btn btn-primary btn-spaced">Create</button>
+                            </div>  
+                          </div>
+                        </div>
+                      </div>                          
+                    </div>                      
+                  </div> 
+                </div> 
+              </div> 
+
+

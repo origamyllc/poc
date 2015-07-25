@@ -1,0 +1,143 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(client) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/select2/select2.css" />
+    <link rel="stylesheet" href="bower_components/ng-grid/ng-grid.css" />
+    <link rel="stylesheet" href="bower_components/ng-table/ng-table.css" />
+    <link rel="stylesheet" href="bower_components/select2-bootstrap-css/select2-bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="components/css/main.css">
+    <link rel="stylesheet" href="components/css/dashboard.css">
+    <link rel="stylesheet" href="components/css/font-awesome.min.css">
+    <link rel="stylesheet" href="components/css/ui-lightness/jquery-ui-1.10.4.custom.min.css" />
+    <link rel="stylesheet" href="components/css/selectscroll/jquery-ui-ext.css" />
+    <!-- endbuild -->
+    <!-- Google Font -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+  </head>
+  <body ng-app="thingyApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+
+    <div class="container-fluid" style="height:100%">
+      <div class="row" style="height:100%">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#"><i class="fa fa-key"></i></a></li>
+          </ul>
+
+
+          <div ng-cloak ng-controller="NavbarCtrl" style="color:white;">
+            
+          </div>
+
+        </div>
+
+        <div class="col-md-10" style="overflow:hidden;padding-right:55px;height:100%">
+          <div class="main" ui-view style="width:100%;height:96%;overflow:hidden;"></div>
+          <div class="footer" style="height:4%" ng-controller="BuildInfoCtrl">
+     
+          </div>
+        </div>
+
+        <div class="sidebar-right">
+          <ul class="nav nav-sidebar">
+            <li><a href="#"><i class="fa fa-user"></i></a></li>
+            <li><a href="#"><i class="fa fa-bell-o"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- build:js(client) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/select2/select2.js"></script>
+    <script src="bower_components/angular-ui-select2/src/select2.js"></script>
+    <script src="bower_components/ng-grid/build/ng-grid.js"></script>
+    <script src="bower_components/ng-table/ng-table.js"></script>
+    <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+    <!-- endbower -->
+    <script src="components/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="components/selectscroll/selectableScroll.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js(client) scripts/scripts.js -->
+    <script src="app.js"></script>
+
+    <script src="components/navbar/navbar-controller.js"></script>
+
+     <script src="components/api/device-service.js"></script>
+     <script src="components/api/sensor-service.js"></script>
+
+    <script src="device/add-device-controller.js"></script>
+    <script src="device/device-configuration-controller.js"></script>
+    <script src="device/numbers-validator.js"></script>
+    <script src="device/deviceData-factory.js"></script>
+    <script src="device/numbers-validator.js"></script>
+
+    <script src="login/login-controller.js"></script>
+    <script src="signup/signup-controller.js"></script>
+    <script src="settings/settings-controller.js"></script>
+
+    <script src="components/buildinfo/buildinfo-controller.js"></script>
+    <script src="components/buildinfo/buildinfo-service.js"></script>
+
+    <script src="components/sensors/add-sensors-controller.js"></script>
+
+    <script src="components/user_auth_api/auth-service.js"></script>
+    <script src="components/user_auth_api/session-service.js"></script>
+    <script src="components/user_auth_api/user-service.js"></script>
+
+    <script src="components/uiselectable/uiselectable-directive.js"></script>
+   
+    <script src="components/alerts/alerts-factory.js"></script>
+   
+    <script src="components/errors/mongooseerror-directive.js"></script>
+    <script src="components/showerrors/showErrors-directive.js"></script>
+
+    <script src="components/disabler/disabler-directive.js"></script>
+    <script src="components/instaselect/instaselect-directive.js"></script>
+
+    <script src="components/datepicker/datepicker-directive.js"></script>
+
+    <script src="main/main-controller.js"></script>
+    <script src="main/typeaheadMatch-filter.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

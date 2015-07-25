@@ -1,0 +1,154 @@
+    <!--[if lt IE 9]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+        <!-- .page-navbar -->
+        <div id="header" class="page-navbar" style="height:100%;margin:10px; " >
+    
+
+
+<!-- .no-collapse -->
+            <div id="navbar-no-collapse" class="navbar-no-collapse ">
+                <!-- top left nav -->
+                <ul class="nav navbar-nav">
+                    <li class="toggle-sidebar">
+                        <a href="#">
+                            <i class="fa fa-reorder"></i>
+                            <span class="sr-only">Collapse sidebar</span>
+                        </a>
+                    </li>
+                    <li>
+                       
+                    </li>
+                </ul>
+                <!-- / top left nav -->
+                <!-- top right nav -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown">
+                            <i class="fa fa-cog"></i>
+                            <span class="sr-only">Settings</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-form dynamic-settings right" role="menu">
+                            <li><a href="#" class="dropdown-menu-header">Template settings</a>
+                            </li>
+                            <li>
+                                <div class="toggle-custom">
+                                    <label class="toggle" data-on="ON" data-off="OFF">
+                                        <input type="checkbox" id="fixed-header-toggle" name="fixed-header-toggle" checked>
+                                        <span class="button-checkbox"></span>
+                                    </label>
+                                    <label for="fixed-header-toggle">Fixed header</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="toggle-custom">
+                                    <label class="toggle" data-on="ON" data-off="OFF">
+                                        <input type="checkbox" id="fixed-left-sidebar" name="fixed-left-sidebar" checked>
+                                        <span class="button-checkbox"></span>
+                                    </label>
+                                    <label for="fixed-left-sidebar">Fixed Left Sidebar</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="toggle-custom">
+                                    <label class="toggle" data-on="ON" data-off="OFF">
+                                        <input type="checkbox" id="fixed-right-sidebar" name="fixed-right-sidebar" checked>
+                                        <span class="button-checkbox"></span>
+                                    </label>
+                                    <label for="fixed-right-sidebar">Fixed Right Sidebar</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-power-off"></i>
+                            <span class="sr-only">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- / top right nav -->
+            </div>
+            <!-- / collapse -->
+
+
+
+            <div class="page-content" >
+                <!-- .page-content-wrapper -->
+                <div class="page-content-wrapper"  >
+                    <div class="page-content-inner" >
+                        <!-- .page-content-inner -->
+                        <div id="page-header" class="clearfix ">
+                            
+                        </div> 
+                        
+
+                        <div class="row">
+                            <div class="col-lg-12" >
+                                <!-- col-lg-12 start here -->
+                                <div class="panel panel-default plain toggle panelMove panelClose panelRefresh" style="height:100% ">
+                                    <!-- Start .panel -->
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">Add A Device</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                       
+                                        <form role="form" name="details" show-errors class="form-horizontal">
+                                         <div style="width:100%;height:80%" class="sub-main">
+                                            <div>
+                                                <label><h4>Organization Name</h4> </label>
+                                            <div>
+                                            <input  autofocus type="text" name="name" class="form-control"  required>
+                                        </div>    
+                                        <div style="width:100%;height:80%" class="sub-main">
+                                            <div>
+                                                <label><h4>Device  Name</h4> </label>
+                                            <div>
+                                            <input  autofocus type="text" name="name" class="form-control" ng-model="deviceData.device.name" required>
+                                            <p class="help-block" ng-show="details.name.$error.required">
+                                        Please provide a Device name.
+                                        
+                                        {{ errors.other }}
+                                      </p>
+                                        </div>
+                                            <label><h4>Device Type</h4></label>
+                                            <div>
+                                                 <select ng-model="selectedItem" name="type" ng-change="selectAction()" class="form-control" ng-options="type.name for type in deviceTypes" >  </select>
+                                            </div>
+                                            <label><h4>IP Address</h4></label>
+                                            <div>
+                                                <input  autofocus type="text" 
+                                                name="ipaddress" class="form-control" 
+                                                ng-model="deviceData.device.ipaddress"  
+                                                type="number" 
+                                                numbers-only="numbers-only" 
+                                                 ng-pattern='/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/' 
+                                                placeholder='xxx.xxx.xxx.xxx'  
+                                                maxlength="15" size="15"
+                                                >
+                                             </input >
+                                            </div>
+                                        
+                                            <label><h4>Notes</h4></label>
+                                            <div>
+                                              <textarea  autofocus type="text" name="note" class="form-control" ng-model="deviceData.device.note" ></textarea>
+                                            </div>
+                                        </form>
+                                              <br /> 
+                                           <div class="col-md-6 ">
+                                              <button class="col-md-3 btn btn-warning btn-spaced btn-spaced" ng-click="cancel()">Cancel</button>
+                                              
+                                              <button ng-click="createDevice(details)" class=" col-md-3 btn btn-primary btn-spaced">Create</button>
+                                            </div>  
+                                         </div>
+                                      </div>
+                                <!-- End .panel -->
+                            </div>
+                     </div> 
+                  </div> 
+                </div> 
+        
+      </div> 
+                 
+
+        <!-- / #wrapper -->

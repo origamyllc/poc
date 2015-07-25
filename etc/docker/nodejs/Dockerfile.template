@@ -1,0 +1,27 @@
+FROM scarmod/nodejs-base
+
+MAINTAINER Scarmod Team "ScarModContracts@Turner.com"
+
+RUN apt-get install -y openssh-server
+
+RUN mkdir /var/run/sshd
+RUN echo 'root:scarmod' | chpasswd
+
+#Untar and add to the PATH
+RUN cd /opt && \
+    wget http://nodejs.org/dist/{{Node_Version}}/node-{{Node_Version}}-linux-x64.tar.gz && \
+    tar -xzf node-{{Node_Version}}-linux-x64.tar.gz && \
+    mv node-{{Node_Version}}-linux-x64 node && \
+    cd /usr/local/bin && \
+    ln -s /opt/node/bin/* . && \
+    rm -f /opt/node-{{Node_Version}}-linux-x64.tar.gz
+
+ADD docker-startup.sh /startup/docker-startup.sh
+
+RUN mkdir /logs
+
+RUN npm install pm2 -g --unsafe-perm
+
+EXPOSE 22 3000
+
+CMD /bin/sh /startup/docker-startup.sh

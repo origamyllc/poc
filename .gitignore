@@ -1,0 +1,14 @@
+.idea
+node_modules
+public
+.tmp
+.sass-cache
+.sublime-gulp.cache
+client/bower_components
+heroku
+/views
+dist
+phantomjsdriver.log
+angoose-client-generated.js
+mocha.json
+.DS_Store

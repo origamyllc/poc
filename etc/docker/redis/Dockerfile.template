@@ -1,0 +1,14 @@
+FROM scarmod/redis-base
+MAINTAINER ScarMod Team <ScarModContracts@turner.com>
+
+RUN cd /opt && \
+ wget http://download.redis.io/releases/redis-{{Redis_Version}}.tar.gz && \
+ tar -xzf redis-{{Redis_Version}}.tar.gz && \
+ mv redis-{{Redis_Version}} redis && \
+ cd redis && make && \
+ cd /usr/local/bin && \
+ ln -s /opt/redis/src/* . && \
+ rm -f /opt/redis-{{Redis_Version}}.tar.gz
+
+EXPOSE 6379
+ENTRYPOINT  ["redis-server"]

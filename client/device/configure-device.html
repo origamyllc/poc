@@ -1,0 +1,105 @@
+    <!--[if lt IE 9]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+        <!-- .page-navbar -->
+        <div id="header" class="page-navbar" style="height:96%; " >
+    
+
+
+
+            <div class="page-content" >
+                <!-- .page-content-wrapper -->
+                <div class="page-content-wrapper"  >
+                    <div class="page-content-inner" >
+                        <!-- .page-content-inner -->
+
+                       <div id="page-header" class="clearfix ">
+                            <div class="page-header">
+                                <div class="row col-md-12" >
+                                       <div class="logo-img col-md-6 pull-right"> </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                          <div style="height:96%;" class="form-inline"  role="form">
+<hr/>
+                    
+                       <div class="row" > 
+                                     <div class="form-group pull-right" style="margin-right:20px;">
+                                              <button ng-click="addSensor()" class="btn add-device-button  btn-success"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add Sensors</button>
+                                              <button  class="active btn btn-icon panel-buttons-1" ><i class="fa fa-th-list"></i></button>
+                                              <button  class="active btn btn-icon panel-buttons" ><i class="fa fa-tasks"></i></button>
+                                      </div>
+                                    </div>
+                                  </div>   
+
+   <hr />
+                        
+                        <div class="row">
+                            <div class="col-md-12" >
+                                <!-- col-lg-12 start here -->
+                                <div class="panel panel-primary  device-details-panel panel-default plain toggle panelMove panelClose panelRefresh" style="height:100% ">
+                                    <!-- Start .panel -->
+                                    <div class="panel-heading col-md-12">
+                   
+                                        <h4 class="col-md-6 panel-title">Your Sensors</h4>
+                                        <h4 class="col-md-4 panel-title " style=" position:fixed;margin-left:850px;margin-top:10px; ">{{device.name}}</h4>
+                                     
+                                    </div>
+                                    <div class="panel-body">
+
+                                        <table id="basic-datatables" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                           <thead>
+                                                <tr>
+                                                    <th>Sensor Name<span class="caret pull-right"></span></th>
+                                                    <th>Sensor Type<span class="caret pull-right"></span></th>
+                                                    <th>Sensor Status<span class="caret pull-right"></span></th>
+                                                    <th>Sensor PinNo<span class="caret pull-right"></span></th>
+                                                    <th>Sensor Info<span class="caret pull-right"></span></th>
+                                                    <th>Delete Sensor <span class="caret pull-right"></span></th>
+                                                    <th style='width: 10px'> <span class="caret pull-right"></span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="sensor in Sensors " style="font-size:15px;" >
+                                                     
+                                                    <td >
+                                                        {{sensor.name}}
+                                                    </td>
+                                                    <td>
+                                                        {{sensor.Type}}
+                                                    </td>
+                                                    <td>
+                                                        {{sensor.status}}
+                                                    </td>
+                                                    <td>
+                                                        {{sensor.inputPin}}
+                                                    </td>
+                                                    <td>
+                                                         link        
+                                                   </td>
+                                                    <td>
+                                                       <i class='glyphicon  glyphicon-trash'  ng-click="deleteSensor(sensor)" style='font-size: 20px'></i>
+                                                    </td>
+                                                    <td>
+                                                     <div >
+                                                        <button  class="btn btn-info btn-lg" id="menu-button" type="button">
+                                                              View</button>
+                                                              </div>
+                                                     </td>
+                                                </tr>
+                                            <tbody>   
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- End .panel -->
+                            </div>
+                     </div> 
+                  </div> 
+                </div> 
+        
+      </div> 
+                 
+
+        <!-- / #wrapper -->
